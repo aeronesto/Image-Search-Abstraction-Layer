@@ -1,0 +1,132 @@
+extends layout
+
+block content
+  div(class="container-fluid")
+  
+    if (err)
+        div
+            h2(style = "color: red;")= err
+  
+    h1(class="header")
+      | FreeCodeCamp API: Image Search Abstraction Layer
+    blockquote
+      p User stories:
+      ol
+        li I can get the image URLs, alt text and page urls for a set of images relating to a given search string.
+        li I can paginate through the responses by adding a ?offset=2 parameter to the URL.
+        li I can get a list of the most recently submitted search strings.
+        
+    h3 Example query usage:
+    code.
+        https://aeronesto-isal.glitch.me/aerotuck?offset=10
+    br
+    code.
+        https://aeronesto-isal.glitch.me/latest
+    h3 Example query output:
+    code.
+      [
+        {
+          "url": "https://tiffanyjanecromwell.files.wordpress.com/2016/01/aero-tuck.jpg",
+          "snippet": "Aero Tuck – Tiffany Cromwell",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn1awLnL2MUrPlc2o02ofx2C2kLhpf-Dl5ILZMVL-x7K4N1pmDg_VAXz4",
+          "context": "https://tiffanycromwell.cc/2016/01/07/tiffany-claims-bronze-in-australian-national-time-trial-championships/aero-tuck/"
+        },
+        {
+          "url": "http://gearinches.com/images/misc/aero-tuck-md.jpg",
+          "snippet": "Aero Tuck",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHN4Z9Ub9LIKziXCWRynviEk-6aJfF0zgcmw0JRCbkflIUUDqeDniLbUE",
+          "context": "http://forums.roadbikereview.com/general-cycling-discussion/aero-tuck-245040.html"
+        },
+        {
+          "url": "https://c1.staticflickr.com/1/61/228952332_f278ae343f_z.jpg?zz=1",
+          "snippet": "DSC_4394 | Bonehead Warning - Incorrect Aero Tuck - This rid… | Flickr",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbFHbeF-kQIf15cjbf0jnDZ3FHrEKB6oHCaZxCD4ZmD7Hy7iuDjzdgHPDM",
+          "context": "https://www.flickr.com/photos/kcha167/228952332"
+        },
+        {
+          "url": "http://www.cycling-inform.com/wp-content/uploads/The-Aero-Tuck-And-Other-Tips-To-Help-You-Ride-At-100-KmH.jpg",
+          "snippet": "How To Go Down Hills Fast On The Bike - Cycling-Inform",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy_Ja38UgzsU14GcWHyapHwfR0c036HXVskk3ZZHtRCYzBwYLb5JvjNUI",
+          "context": "https://www.cycling-inform.com/how-to-go-down-hills-fast-on-the-bike-the-aero-tuck-and-other-tips-to-help-you-ride-at-100-kmh"
+        },
+        {
+          "url": "https://s-media-cache-ak0.pinimg.com/736x/72/67/6e/72676e722c5e8cacc66d4bd01d58583c.jpg",
+          "snippet": "Peter Sagan - Aero Tuck | Cycling | Pinterest",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHyeHOWe4qQkRK8oJZevDiB8jT7wfeZzruvyWbNIHG4Zj7gnFh_wDiB6DS",
+          "context": "https://www.pinterest.se/pin/369858188127796407/"
+        },
+        {
+          "url": "https://carbonaddiction.files.wordpress.com/2013/08/20130821-191656.jpg",
+          "snippet": "How low can you go? – Carbon Addiction",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7lZlEiLGquIlJZYctr7AUaQMV5WPMrkwVZR8K1WxG2feZAmARGiUhVNr-",
+          "context": "https://carbonaddiction.net/2013/08/22/how-low-can-you-go/"
+        },
+        {
+          "url": "https://s-media-cache-ak0.pinimg.com/originals/79/af/eb/79afebd04a4d8f4762700734e1b4c044.jpg",
+          "snippet": "Gallery: 2014 Eneco Tour, stage 6 - Tim Wellens in his aero tuck ...",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP3Telv02QVjC5sq_UuY3vEVSJKIc2u75ch711RCVMeCglVKZtthVeOHM",
+          "context": "https://www.pinterest.com/pin/119978777548297921/"
+        },
+        {
+          "url": "http://i.gyazo.com/c39311c15c991be69990b88cd6a79cf2.png",
+          "snippet": "Tony Martin's aero tuck during today's VPV TT : bicycling",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmDFW7dhmA7thHfAmjMLFkvcJFyQ6HqQVrsBix1uxJM3XN-jBSIYB66R0",
+          "context": "https://www.reddit.com/r/bicycling/comments/22vxb1/tony_martins_aero_tuck_during_todays_vpv_tt/"
+        },
+        {
+          "url": "http://www.stickybottle.com/wp-content/uploads/2016/09/Froome.jpg",
+          "snippet": "Video: Amateur cyclist almost killed trying Froome \"aero\" tuck ...",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBxRhbsTHK5qzk7MDhKPjhdZMSFChDMSiMqoe-c0BKP1mrXfW-SOi-Mgo",
+          "context": "http://www.stickybottle.com/latest-news/video-amateur-cyclist-almost-killed-trying-froome-aero-tuck/"
+        },
+        {
+          "url": "http://i771.photobucket.com/albums/xx356/steamer_03/hovanmotivationalposter_zpsd617ea69.jpg",
+          "snippet": "Drag Reduction For Long Distance Riding - Bike Forums",
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5atOSAhMg23Gnf_GrPTwEMKCmwomTB86EhKV0bZvOL7gjo_W6UIBoPDNE",
+          "context": "http://www.bikeforums.net/long-distance-competition-ultracycling-randonneuring-endurance-cycling/980271-drag-reduction-long-distance-riding.html"
+        }
+      ]
+    h3 Example latest output:
+    code.
+      [
+        {
+          "term": "torero bikes",
+          "when": "7/18/2017, 3:37:28 PM"
+        },
+        {
+          "term": "aerotuck",
+          "when": "7/18/2017, 3:37:18 PM"
+        },
+        {
+          "term": "tour de france",
+          "when": "7/18/2017, 3:07:37 PM"
+        },
+        {
+          "term": "torero,
+          "when": "7/18/2017, 3:05:07 PM"
+        },
+        {
+          "term": "cycling",
+          "when": "7/18/2017, 3:05:05 PM"
+        },
+        {
+          "term": "dogs",
+          "when": "7/18/2017, 3:03:42 PM"
+        },
+        {
+          "term": "dogs",
+          "when": "7/18/2017, 3:03:41 PM"
+        },
+        {
+          "term": "dogs",
+          "when": "7/18/2017, 3:03:41 PM"
+        },
+        {
+          "term": "dogs",
+          "when": "7/18/2017, 3:02:54 PM"
+        },
+        {
+          "term": "dogs",
+          "when": "7/18/2017, 3:02:52 PM"
+        }
+      ]
